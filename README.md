@@ -49,3 +49,15 @@ packer build aws-ubuntu.pkr.hcl
 I then opened my AWS AMI page to verify that Packer had successfully built the AMI.
 
 ![](/images/AMI1.png)
+
+**2. Provisioners**
+
+With Packer you install and configure software in the machines before turning them into images. Continuing with the official tutorial, I completed my image by installing Redis on it. I edited the template to include a provisioner inside the build block and underneath the sources assignment.
+
+![](/images/provisioner.png)
+
+AMI names must be unique so I updated my AMI name before building the image. I then ran the _packer build_ command again.
+
+![](/images/packerBuild2.png)
+
+![](/images/AMI2.png)
